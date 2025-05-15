@@ -61,8 +61,8 @@ interface ThreeSceneProps {
 
 const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
   return (
-    <div className={`w-full h-full ${className}`}>
-      <Canvas dpr={[1, 2]}>
+    <div className={`w-full h-full ${className || ''}`}>
+      <Canvas gl={{ antialias: true }} dpr={[1, 2]}>
         <PerspectiveCamera makeDefault position={[0, 0, 8]} />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
