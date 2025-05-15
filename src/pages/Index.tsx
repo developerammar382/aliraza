@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/sections/HeroSection';
 import AboutSection from '@/sections/AboutSection';
+import EducationSection from '@/sections/EducationSection';
+import WorkExperienceSection from '@/sections/WorkExperienceSection';
 import SkillsSection from '@/sections/SkillsSection';
 import ProjectsSection from '@/sections/ProjectsSection';
 import ContactSection from '@/sections/ContactSection';
@@ -42,6 +44,8 @@ const Index = () => {
           <main>
             <HeroSection />
             <AboutSection />
+            <EducationSection />
+            <WorkExperienceSection />
             <SkillsSection />
             <ProjectsSection />
             <ContactSection />

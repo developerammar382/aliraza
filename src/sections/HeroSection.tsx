@@ -75,7 +75,7 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Crafting digital experiences with modern technology and creative solutions.
+              Crafting digital experiences with HTML, CSS, JavaScript, React, Next.js and Laravel.
             </motion.p>
             
             <motion.div

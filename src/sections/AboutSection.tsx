@@ -37,7 +37,7 @@ const AboutSection: React.FC = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
-            className="relative mx-auto max-w-sm lg:max-w-md"
+            className="relative mx-auto lg:mx-0 max-w-sm lg:max-w-md"
             initial={{ opacity: 0, rotateY: 45 }}
             whileInView={{ opacity: 1, rotateY: 0 }}
             viewport={{ once: true }}
@@ -48,7 +48,7 @@ const AboutSection: React.FC = () => {
               <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-lg glass-morphism overflow-hidden mx-auto">
                 <img 
                   src="/placeholder.svg"
-                  alt="Profile" 
+                  alt="Ammar Shahid" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -77,7 +77,7 @@ const AboutSection: React.FC = () => {
           
           <div ref={ref} className="space-y-4 md:space-y-6">
             <AnimatedText 
-              text="Creating Digital Experiences Since 2018"
+              text="Frontend Web Developer Since 2018"
               className="text-xl sm:text-2xl md:text-3xl font-bold mb-4"
               type="heading"
             />
