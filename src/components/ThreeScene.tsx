@@ -14,7 +14,7 @@ const AnimatedSphere = ({ position = [0, 0, 0], size = 1, color = '#4fd1c5' }) =
   });
   
   return (
-    <mesh ref={mesh} position={position}>
+    <mesh ref={mesh} position={position as any}>
       <sphereGeometry args={[size, 32, 32]} />
       <meshStandardMaterial color={color} roughness={0.1} metalness={0.8} />
     </mesh>
@@ -31,7 +31,7 @@ const AnimatedTorus = ({ position = [0, 0, 0], size = 1, color = '#ff63c3' }) =>
   });
   
   return (
-    <mesh ref={mesh} position={position}>
+    <mesh ref={mesh} position={position as any}>
       <torusGeometry args={[size, size / 3, 16, 50]} />
       <meshStandardMaterial color={color} roughness={0.1} metalness={0.8} />
     </mesh>
@@ -48,7 +48,7 @@ const AnimatedBox = ({ position = [0, 0, 0], size = 1, color = '#4299e1' }) => {
   });
   
   return (
-    <mesh ref={mesh} position={position}>
+    <mesh ref={mesh} position={position as any}>
       <boxGeometry args={[size, size, size]} />
       <meshStandardMaterial color={color} roughness={0.1} metalness={0.8} />
     </mesh>

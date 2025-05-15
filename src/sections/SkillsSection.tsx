@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import CardSkill from '../components/CardSkill';
 import { useInView } from 'react-intersection-observer';
-import { Python, Database, Globe, Server, Code, Cpu } from 'lucide-react';
+import { Code, Database, Globe, Server, FileCode, Cpu } from 'lucide-react';
 
 const SkillsSection: React.FC = () => {
   const { ref, inView } = useInView({
@@ -16,7 +15,7 @@ const SkillsSection: React.FC = () => {
     { icon: <Server />, title: 'Backend Development', level: 85 },
     { icon: <Database />, title: 'Database Management', level: 80 },
     { icon: <Globe />, title: 'Web Performance', level: 75 },
-    { icon: <Python />, title: 'Data Analysis', level: 70 },
+    { icon: <FileCode />, title: 'Data Analysis', level: 70 },
     { icon: <Cpu />, title: 'DevOps', level: 65 }
   ];
   
@@ -100,7 +99,6 @@ const SkillsSection: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="w-16 h-16 rounded-full glass-morphism flex items-center justify-center text-primary mb-2">
-                  {/* You would replace this with actual tech logos */}
                   <span className="text-lg font-bold">{tech.charAt(0)}</span>
                 </div>
                 <span className="text-sm">{tech}</span>
