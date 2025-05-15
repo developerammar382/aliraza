@@ -97,11 +97,14 @@ const ContactForm: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <Input
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your name"
+            id="name"
             className={`bg-secondary/50 border-0 focus-visible:ring-primary ${errors.name ? 'border-destructive' : ''}`}
+            {...{
+              name: "name",
+              value: formData.name,
+              onChange: handleChange,
+              placeholder: "Your name"
+            }}
           />
           {errors.name && (
             <p className="text-destructive text-xs mt-1">{errors.name}</p>
@@ -118,12 +121,15 @@ const ContactForm: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <Input
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="your.email@example.com"
+            id="email"
             className={`bg-secondary/50 border-0 focus-visible:ring-primary ${errors.email ? 'border-destructive' : ''}`}
+            {...{
+              name: "email",
+              type: "email",
+              value: formData.email,
+              onChange: handleChange,
+              placeholder: "your.email@example.com"
+            }}
           />
           {errors.email && (
             <p className="text-destructive text-xs mt-1">{errors.email}</p>
@@ -140,12 +146,15 @@ const ContactForm: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <Textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Your message..."
-            rows={5}
+            id="message"
             className={`bg-secondary/50 border-0 focus-visible:ring-primary ${errors.message ? 'border-destructive' : ''}`}
+            {...{
+              name: "message",
+              value: formData.message,
+              onChange: handleChange,
+              placeholder: "Your message...",
+              rows: 5
+            }}
           />
           {errors.message && (
             <p className="text-destructive text-xs mt-1">{errors.message}</p>
