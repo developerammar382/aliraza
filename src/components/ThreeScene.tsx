@@ -62,8 +62,15 @@ interface ThreeSceneProps {
 const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
   return (
     <div className={`w-full h-full ${className || ''}`}>
-      <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 2]}>
-        <PerspectiveCamera makeDefault position={[0, 0, 8]} />
+      <Canvas
+        camera={{ position: [0, 0, 8], fov: 75 }}
+        gl={{ 
+          antialias: true, 
+          alpha: true,
+          preserveDrawingBuffer: true
+        }}
+        dpr={[1, 2]}
+      >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
         <Environment preset="city" />
