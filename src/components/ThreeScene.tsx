@@ -14,7 +14,7 @@ const AnimatedSphere = ({ position = [0, 0, 0], size = 1, color = '#4fd1c5' }) =
   });
   
   return (
-    <mesh ref={mesh} position={position as any}>
+    <mesh ref={mesh} position={position as [number, number, number]}>
       <sphereGeometry args={[size, 32, 32]} />
       <meshStandardMaterial color={color} roughness={0.1} metalness={0.8} />
     </mesh>
@@ -31,7 +31,7 @@ const AnimatedTorus = ({ position = [0, 0, 0], size = 1, color = '#ff63c3' }) =>
   });
   
   return (
-    <mesh ref={mesh} position={position as any}>
+    <mesh ref={mesh} position={position as [number, number, number]}>
       <torusGeometry args={[size, size / 3, 16, 50]} />
       <meshStandardMaterial color={color} roughness={0.1} metalness={0.8} />
     </mesh>
@@ -48,7 +48,7 @@ const AnimatedBox = ({ position = [0, 0, 0], size = 1, color = '#4299e1' }) => {
   });
   
   return (
-    <mesh ref={mesh} position={position as any}>
+    <mesh ref={mesh} position={position as [number, number, number]}>
       <boxGeometry args={[size, size, size]} />
       <meshStandardMaterial color={color} roughness={0.1} metalness={0.8} />
     </mesh>
@@ -62,7 +62,7 @@ interface ThreeSceneProps {
 const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
   return (
     <div className={`w-full h-full ${className}`}>
-      <Canvas>
+      <Canvas dpr={[1, 2]}>
         <PerspectiveCamera makeDefault position={[0, 0, 8]} />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
