@@ -14,20 +14,20 @@ const WorkExperienceSection: React.FC = () => {
   const experiences = [
     {
       position: "Senior Frontend Developer",
-      company: "Tech Solutions Inc.",
-      year: "2021 - Present",
+      company: "Blue Horn Technologies",
+      year: "2023 - Present",
       description: "Lead frontend development for enterprise clients using React, Next.js and modern JavaScript frameworks. Implemented responsive designs and optimized application performance."
     },
     {
       position: "Web Developer",
-      company: "Digital Creations",
-      year: "2018 - 2021",
+      company: "Adrightly",
+      year: "2022 - 2023",
       description: "Developed and maintained client websites using HTML, CSS, JavaScript, and various content management systems. Collaborated with design team to implement responsive UI/UX designs."
     },
     {
       position: "Frontend Intern",
-      company: "WebCraft Studio",
-      year: "2018",
+      company: "Multex. Pk",
+      year: "2022",
       description: "Assisted in developing and debugging frontend components. Gained hands-on experience with modern web development practices and tools."
     }
   ];

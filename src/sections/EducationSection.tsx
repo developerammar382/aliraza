@@ -14,14 +14,14 @@ const EducationSection: React.FC = () => {
   const education = [
     {
       degree: "Bachelor's in Computer Science",
-      institution: "University of Computer Science",
-      year: "2016 - 2020",
-      description: "Focused on web development and user interface design with honors distinction."
+      institution: "Virtual University Pakistan",
+      year: "2014 - Present",
+      description: "Currently pursuing a degree with a focus on web development and user interface design."
     },
     {
       degree: "Web Development Certification",
       institution: "Tech Institute",
-      year: "2020",
+      year: "2023",
       description: "Advanced certification in modern web frameworks and responsive design principles."
     }
   ];

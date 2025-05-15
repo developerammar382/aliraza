@@ -16,7 +16,7 @@ const SkillsSection: React.FC = () => {
   
   const technicalSkills = [
     { icon: <Code />, title: 'Frontend Development', level: 90 },
-    { icon: <Server />, title: 'Backend Development', level: 75 },
+    { icon: <Server />, title: 'Backend Development', level: 25 },
     { icon: <Globe />, title: 'Responsive Design', level: 95 },
     { icon: <FileCode />, title: 'React/Next.js', level: 85 },
     { icon: <Database />, title: 'Laravel/Statamic', level: 70 },

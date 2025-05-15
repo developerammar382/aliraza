@@ -43,7 +43,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      <div ref={containerRef} className="container max-w-6xl px-4 md:px-6 py-12 md:py-20 relative z-10">
+      <div ref={containerRef} className="container max-w-7xl px-4 md:px-6 py-12 md:py-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-4 md:space-y-6 text-center lg:text-left order-2 lg:order-1">
             <motion.span 
@@ -64,8 +64,8 @@ const HeroSection: React.FC = () => {
               <span className="block">Hi, I'm <span className="text-gradient">Ammar Shahid</span> </span>
               <AnimatedText 
                 text="I build Web Experiences" 
-                type="typing"
-                className="mt-2 block"
+                type="heading"
+                className="mt-2 block text-3xl sm:text-4xl lg:text-5xl"
               />
             </motion.h1>
             

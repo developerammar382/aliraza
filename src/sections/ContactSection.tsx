@@ -92,7 +92,7 @@ const ContactSection: React.FC = () => {
                   <Github size={16} />
                 </motion.a>
                 <motion.a
-                  href="#" 
+                  href="www.linkedin.com/in/ammar-shahid-7313a9260" 
                   className="w-9 h-9 sm:w-10 sm:h-10 rounded-full glass-morphism flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}

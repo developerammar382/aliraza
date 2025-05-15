@@ -47,7 +47,7 @@ const AboutSection: React.FC = () => {
               {/* Profile Image */}
               <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-lg glass-morphism overflow-hidden mx-auto">
                 <img 
-                  src="/placeholder.svg"
+                  src="/my-img.jpeg"
                   alt="Ammar Shahid" 
                   className="w-full h-full object-cover"
                 />
@@ -59,7 +59,7 @@ const AboutSection: React.FC = () => {
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
-                <span className="text-xl sm:text-2xl font-bold">5+</span>
+                <span className="text-xl sm:text-2xl font-bold">2+</span>
               </motion.div>
               <motion.div 
                 className="absolute bottom-5 -right-5 w-16 h-16 sm:w-20 sm:h-20 rounded-lg glass-morphism flex items-center justify-center text-primary p-2 text-center"
@@ -77,7 +77,7 @@ const AboutSection: React.FC = () => {
           
           <div ref={ref} className="space-y-4 md:space-y-6">
             <AnimatedText 
-              text="Frontend Web Developer Since 2018"
+              text="Frontend Web Developer Since 2023"
               className="text-xl sm:text-2xl md:text-3xl font-bold mb-4"
               type="heading"
             />

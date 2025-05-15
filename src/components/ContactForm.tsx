@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
@@ -55,28 +54,48 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     
     if (!validate()) {
-      // Shake the form on error
       return;
     }
     
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-    
-    setIsSubmitting(false);
+    try {
+      const response = await fetch("https://formspree.io/f/mjkwaglq", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        }),
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -99,12 +118,10 @@ const ContactForm: React.FC = () => {
           <Input
             id="name"
             className={`bg-secondary/50 border-0 focus-visible:ring-primary ${errors.name ? 'border-destructive' : ''}`}
-            {...{
-              name: "name",
-              value: formData.name,
-              onChange: handleChange,
-              placeholder: "Your name"
-            }}
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your name"
           />
           {errors.name && (
             <p className="text-destructive text-xs mt-1">{errors.name}</p>
@@ -123,13 +140,11 @@ const ContactForm: React.FC = () => {
           <Input
             id="email"
             className={`bg-secondary/50 border-0 focus-visible:ring-primary ${errors.email ? 'border-destructive' : ''}`}
-            {...{
-              name: "email",
-              type: "email",
-              value: formData.email,
-              onChange: handleChange,
-              placeholder: "your.email@example.com"
-            }}
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="your.email@example.com"
           />
           {errors.email && (
             <p className="text-destructive text-xs mt-1">{errors.email}</p>
@@ -148,13 +163,11 @@ const ContactForm: React.FC = () => {
           <Textarea
             id="message"
             className={`bg-secondary/50 border-0 focus-visible:ring-primary ${errors.message ? 'border-destructive' : ''}`}
-            {...{
-              name: "message",
-              value: formData.message,
-              onChange: handleChange,
-              placeholder: "Your message...",
-              rows: 5
-            }}
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your message..."
+            rows={5}
           />
           {errors.message && (
             <p className="text-destructive text-xs mt-1">{errors.message}</p>
