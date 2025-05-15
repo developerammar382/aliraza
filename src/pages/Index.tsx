@@ -1,25 +1,21 @@
 
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-import HeroSection from '@/sections/HeroSection';
-import AboutSection from '@/sections/AboutSection';
-import SkillsSection from '@/sections/SkillsSection';
-import ProjectsSection from '@/sections/ProjectsSection';
-import ContactSection from '@/sections/ContactSection';
 import Footer from '@/components/Footer';
-import ParticleBackground from '@/components/ParticleBackground';
-import MouseFollower from '@/components/MouseFollower';
-import Preloader from '@/components/Preloader';
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   
-  // Hide preloader after it completes
-  const handlePreloaderComplete = () => {
-    setIsLoading(false);
-    // Preload complete - enable smooth scrolling
-    document.body.style.overflow = 'auto';
-  };
+  // Force the loading state to end after 3 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.overflow = 'auto';
+    }, 3000);
+    
+    return () => clearTimeout(timer);
+  }, []);
   
   // Disable scroll during preloader
   useEffect(() => {
@@ -31,18 +27,25 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {isLoading ? (
-        <Preloader onComplete={handlePreloaderComplete} />
+        <div className="fixed inset-0 bg-background z-50 flex flex-col items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold mb-2">Developer Portfolio</h1>
+            <p className="text-sm text-muted-foreground">Loading...</p>
+          </div>
+        </div>
       ) : (
         <>
-          <MouseFollower />
-          <ParticleBackground />
           <Navbar />
-          <main>
-            <HeroSection />
-            <AboutSection />
-            <SkillsSection />
-            <ProjectsSection />
-            <ContactSection />
+          <main className="container py-20">
+            <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                Welcome to My <span className="text-primary">Portfolio</span>
+              </h1>
+              <p className="text-xl mb-8 max-w-xl">
+                A developer portfolio showcasing my projects and skills.
+              </p>
+              <Button size="lg">View Projects</Button>
+            </div>
           </main>
           <Footer />
         </>
