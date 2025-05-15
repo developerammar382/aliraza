@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import DarkModeToggle from './DarkModeToggle';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const navLinks = [
   { title: 'About', href: '#about' },
@@ -15,6 +16,7 @@ const navLinks = [
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -44,13 +46,13 @@ const Navbar: React.FC = () => {
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 glass-morphism' : 'py-5'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <a href="#" className="text-2xl font-bold text-gradient">
+          <a href="#" className="text-xl sm:text-2xl font-bold text-gradient">
             DEV<span className="text-primary">.</span>
           </a>
           
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <nav>
-              <ul className="flex space-x-6">
+              <ul className="flex space-x-3 lg:space-x-6">
                 {navLinks.map(link => (
                   <li key={link.title}>
                     <a 

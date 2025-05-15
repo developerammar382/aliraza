@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import CardProject from '../components/CardProject';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const projects = [
   {
@@ -52,7 +53,10 @@ const projects = [
 
 const ProjectsSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const projectsPerPage = 3;
+  const isMobile = useIsMobile();
+  
+  // Adjust projects per page based on screen size
+  const projectsPerPage = isMobile ? 1 : 3;
   const pageCount = Math.ceil(projects.length / projectsPerPage);
   
   const handleNext = () => {
@@ -69,11 +73,11 @@ const ProjectsSection: React.FC = () => {
   );
   
   return (
-    <section id="projects" className="py-20 md:py-32 relative">
+    <section id="projects" className="py-16 md:py-24 lg:py-32 relative">
       <div className="container max-w-6xl px-4 md:px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-4"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -91,7 +95,7 @@ const ProjectsSection: React.FC = () => {
           />
           
           <motion.p
-            className="mt-4 text-muted-foreground max-w-xl mx-auto"
+            className="mt-4 text-muted-foreground max-w-xl mx-auto text-sm sm:text-base"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -103,7 +107,7 @@ const ProjectsSection: React.FC = () => {
         
         <div className="relative">
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className={`grid grid-cols-1 ${isMobile ? '' : 'md:grid-cols-2 lg:grid-cols-3'} gap-6`}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -121,7 +125,7 @@ const ProjectsSection: React.FC = () => {
             ))}
           </motion.div>
           
-          <div className="flex justify-center mt-10 space-x-4">
+          <div className="flex justify-center mt-8 md:mt-10 space-x-4">
             <Button 
               variant="outline" 
               size="icon" 

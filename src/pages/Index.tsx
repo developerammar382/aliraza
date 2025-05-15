@@ -10,9 +10,11 @@ import Footer from '@/components/Footer';
 import ParticleBackground from '@/components/ParticleBackground';
 import MouseFollower from '@/components/MouseFollower';
 import Preloader from '@/components/Preloader';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const isMobile = useIsMobile();
   
   // Hide preloader after it completes
   const handlePreloaderComplete = () => {
@@ -34,7 +36,7 @@ const Index = () => {
         <Preloader onComplete={handlePreloaderComplete} />
       ) : (
         <>
-          <MouseFollower />
+          {!isMobile && <MouseFollower />}
           <ParticleBackground />
           <Navbar />
           <main>

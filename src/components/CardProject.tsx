@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface CardProjectProps {
   title: string;
@@ -20,10 +21,14 @@ const CardProject: React.FC<CardProjectProps> = ({
   projectUrl
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const isMobile = useIsMobile();
+  
+  // On mobile, always show the details
+  const shouldShowDetails = isMobile || isHovered;
   
   return (
     <motion.div
-      className="group relative rounded-xl overflow-hidden h-80 glass-morphism"
+      className="group relative rounded-xl overflow-hidden h-64 sm:h-72 md:h-80 glass-morphism"
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -38,39 +43,39 @@ const CardProject: React.FC<CardProjectProps> = ({
         />
       </div>
       
-      <div className="absolute inset-0 flex flex-col justify-end p-6 z-20">
+      <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 z-20">
         <motion.h3 
-          className="text-xl font-bold mb-2"
+          className="text-lg sm:text-xl font-bold mb-2"
           animate={{ opacity: isHovered ? 1 : 0.9 }}
         >
           {title}
         </motion.h3>
         
         <motion.div 
-          className="overflow-hidden h-0 group-hover:h-auto transition-all duration-300"
+          className={`overflow-hidden transition-all duration-300 ${shouldShowDetails ? 'opacity-100' : 'opacity-0 h-0'}`}
           initial={{ height: 0, opacity: 0 }}
           animate={{ 
-            height: isHovered ? 'auto' : 0,
-            opacity: isHovered ? 1 : 0,
+            height: shouldShowDetails ? 'auto' : 0,
+            opacity: shouldShowDetails ? 1 : 0,
             transition: { duration: 0.3 }
           }}
         >
-          <p className="text-sm text-muted-foreground mb-4">{description}</p>
+          <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">{description}</p>
           
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
             {tags.map((tag) => (
               <span 
                 key={tag}
-                className="text-xs px-2 py-1 rounded-full bg-primary/20 text-primary-foreground"
+                className="text-[10px] sm:text-xs px-2 py-0.5 rounded-full bg-primary/20 text-primary-foreground"
               >
                 {tag}
               </span>
             ))}
           </div>
           
-          <Button asChild size="sm" className="gap-2">
+          <Button asChild size="sm" className="gap-2 w-full sm:w-auto">
             <a href={projectUrl} target="_blank" rel="noopener noreferrer">
-              View Project <ArrowRight size={16} />
+              View Project <ArrowRight size={14} />
             </a>
           </Button>
         </motion.div>

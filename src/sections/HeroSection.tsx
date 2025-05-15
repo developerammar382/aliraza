@@ -5,12 +5,16 @@ import ThreeScene from '../components/ThreeScene';
 import AnimatedText from '../components/AnimatedText';
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroSection: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
+    if (isMobile) return; // Skip mouse tracking on mobile
+    
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return;
       
@@ -35,15 +39,15 @@ const HeroSection: React.FC = () => {
         container.removeEventListener('mousemove', handleMouseMove);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <div ref={containerRef} className="container max-w-6xl px-4 md:px-6 py-12 md:py-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 text-center lg:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="space-y-4 md:space-y-6 text-center lg:text-left order-2 lg:order-1">
             <motion.span 
-              className="inline-block text-sm text-primary font-mono px-3 py-1 border border-primary/30 rounded-full"
+              className="inline-block text-xs sm:text-sm text-primary font-mono px-3 py-1 border border-primary/30 rounded-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -52,7 +56,7 @@ const HeroSection: React.FC = () => {
             </motion.span>
             
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -66,7 +70,7 @@ const HeroSection: React.FC = () => {
             </motion.h1>
             
             <motion.p
-              className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto lg:mx-0"
+              className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -80,24 +84,24 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="w-full sm:w-auto">
                 <a href="#projects">View My Projects</a>
               </Button>
               
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
                 <a href="#contact">Get In Touch</a>
               </Button>
             </motion.div>
           </div>
           
           <motion.div
-            className="h-80 lg:h-[450px] relative"
+            className="h-60 sm:h-80 lg:h-[450px] relative order-1 lg:order-2"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            style={{
+            style={!isMobile ? {
               transform: `perspective(1000px) rotateX(${mousePosition.y * 5}deg) rotateY(${-mousePosition.x * 5}deg)`
-            }}
+            } : {}}
           >
             <ThreeScene />
           </motion.div>
@@ -121,7 +125,7 @@ const HeroSection: React.FC = () => {
         </motion.div>
       </div>
       
-      {/* Additional background elements */}
+      {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl" />
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/10 rounded-full filter blur-3xl" />
