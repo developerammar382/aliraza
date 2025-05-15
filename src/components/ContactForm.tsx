@@ -97,7 +97,6 @@ const ContactForm: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <Input
-            id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -119,7 +118,6 @@ const ContactForm: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <Input
-            id="email"
             name="email"
             type="email"
             value={formData.email}
@@ -142,7 +140,6 @@ const ContactForm: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <Textarea
-            id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
