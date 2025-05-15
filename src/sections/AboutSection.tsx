@@ -10,7 +10,7 @@ const AboutSection: React.FC = () => {
     threshold: 0.1
   });
   
-  const skills = ['JavaScript', 'TypeScript', 'React', 'Node.js', 'Python', 'CSS/SCSS', 'Tailwind CSS'];
+  const skills = ['HTML', 'CSS', 'Bootstrap', 'Tailwind CSS', 'JavaScript', 'React', 'Next.js', 'Statamic', 'Laravel'];
   
   return (
     <section id="about" className="py-16 md:py-24 lg:py-32 relative">
@@ -83,12 +83,12 @@ const AboutSection: React.FC = () => {
             />
             
             <AnimatedText 
-              text="I'm a passionate full-stack developer with a strong foundation in both front-end and back-end technologies. My journey in web development began over 5 years ago, and I've been crafting engaging digital experiences ever since."
+              text="I'm a passionate frontend web developer with a strong foundation in both front-end technologies and backend frameworks. My journey in web development began over 5 years ago, and I've been crafting engaging digital experiences ever since."
               className="text-muted-foreground text-sm sm:text-base"
             />
             
             <AnimatedText 
-              text="I specialize in building responsive, accessible, and performant web applications using modern frameworks and technologies. My approach combines technical expertise with creative problem-solving to deliver solutions that not only meet but exceed client expectations."
+              text="I specialize in building responsive, accessible, and performant web applications using modern frameworks like React, Next.js, and tools like Tailwind CSS. My approach combines technical expertise with creative problem-solving to deliver solutions that not only meet but exceed client expectations."
               className="text-muted-foreground text-sm sm:text-base"
             />
             

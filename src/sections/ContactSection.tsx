@@ -55,7 +55,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-muted-foreground">Email</p>
-                  <p className="text-sm sm:text-base font-medium">contact@example.com</p>
+                  <p className="text-sm sm:text-base font-medium">developer.ammar382@gmail.com</p>
                 </div>
               </div>
               
@@ -65,7 +65,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-muted-foreground">Phone</p>
-                  <p className="text-sm sm:text-base font-medium">+1 (555) 123-4567</p>
+                  <p className="text-sm sm:text-base font-medium">+92 3167578569</p>
                 </div>
               </div>
               
@@ -75,7 +75,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-muted-foreground">Location</p>
-                  <p className="text-sm sm:text-base font-medium">San Francisco, CA</p>
+                  <p className="text-sm sm:text-base font-medium">Pakistan</p>
                 </div>
               </div>
             </div>

@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              DEV<span className="text-primary">.</span>
+              AMMAR<span className="text-primary">.</span>
             </motion.h3>
             <motion.p 
               className="text-xs md:text-sm text-muted-foreground"
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p>&copy; {new Date().getFullYear()} DEV. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Ammar Shahid. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>

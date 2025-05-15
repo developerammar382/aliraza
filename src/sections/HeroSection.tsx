@@ -52,7 +52,7 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Full-Stack Developer
+              Frontend Web Developer
             </motion.span>
             
             <motion.h1
@@ -61,7 +61,7 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <span className="block">Hi, I'm <span className="text-gradient">John Doe</span> </span>
+              <span className="block">Hi, I'm <span className="text-gradient">Ammar Shahid</span> </span>
               <AnimatedText 
                 text="I build Web Experiences" 
                 type="typing"

@@ -16,11 +16,11 @@ const SkillsSection: React.FC = () => {
   
   const technicalSkills = [
     { icon: <Code />, title: 'Frontend Development', level: 90 },
-    { icon: <Server />, title: 'Backend Development', level: 85 },
-    { icon: <Database />, title: 'Database Management', level: 80 },
-    { icon: <Globe />, title: 'Web Performance', level: 75 },
-    { icon: <FileCode />, title: 'Data Analysis', level: 70 },
-    { icon: <Cpu />, title: 'DevOps', level: 65 }
+    { icon: <Server />, title: 'Backend Development', level: 75 },
+    { icon: <Globe />, title: 'Responsive Design', level: 95 },
+    { icon: <FileCode />, title: 'React/Next.js', level: 85 },
+    { icon: <Database />, title: 'Laravel/Statamic', level: 70 },
+    { icon: <Cpu />, title: 'UI/UX Implementation', level: 80 }
   ];
   
   const containerVariants = {
@@ -93,7 +93,7 @@ const SkillsSection: React.FC = () => {
           <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-center">Tools & Technologies</h3>
           
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-            {['React', 'Node.js', 'Python', 'TypeScript', 'MongoDB', 'PostgreSQL', 'AWS', 'Docker'].map((tech, index) => (
+            {['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Bootstrap', 'Laravel', 'VS Code', 'Git'].map((tech, index) => (
               <motion.div
                 key={index}
                 className="flex flex-col items-center"
