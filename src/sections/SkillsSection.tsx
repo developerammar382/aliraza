@@ -114,7 +114,7 @@ const SkillsSection: React.FC = () => {
       
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full filter blur-3xl z-0" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl z-0" />
+      <div className="absolute bottom-0 left-0 w-full sm:w-96 h-96 bg-primary/5 rounded-full filter blur-3xl z-0" />
     </section>
   );
 };

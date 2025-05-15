@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
               <Github size={18} />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="www.linkedin.com/in/ammar-shahid-7313a9260" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin size={18} />
             </a>
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
