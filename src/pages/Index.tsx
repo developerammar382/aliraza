@@ -1,12 +1,52 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState, useEffect } from 'react';
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/sections/HeroSection';
+import AboutSection from '@/sections/AboutSection';
+import SkillsSection from '@/sections/SkillsSection';
+import ProjectsSection from '@/sections/ProjectsSection';
+import ContactSection from '@/sections/ContactSection';
+import Footer from '@/components/Footer';
+import ParticleBackground from '@/components/ParticleBackground';
+import MouseFollower from '@/components/MouseFollower';
+import Preloader from '@/components/Preloader';
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  
+  // Hide preloader after it completes
+  const handlePreloaderComplete = () => {
+    setIsLoading(false);
+    // Preload complete - enable smooth scrolling
+    document.body.style.overflow = 'auto';
+  };
+  
+  // Disable scroll during preloader
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    }
+  }, [isLoading]);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      {isLoading ? (
+        <Preloader onComplete={handlePreloaderComplete} />
+      ) : (
+        <>
+          <MouseFollower />
+          <ParticleBackground />
+          <Navbar />
+          <main>
+            <HeroSection />
+            <AboutSection />
+            <SkillsSection />
+            <ProjectsSection />
+            <ContactSection />
+          </main>
+          <Footer />
+        </>
+      )}
     </div>
   );
 };

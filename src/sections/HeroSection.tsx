@@ -1,0 +1,133 @@
+
+import React, { useEffect, useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import ThreeScene from '../components/ThreeScene';
+import AnimatedText from '../components/AnimatedText';
+import { Button } from "@/components/ui/button";
+import { ArrowDown } from 'lucide-react';
+
+const HeroSection: React.FC = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!containerRef.current) return;
+      
+      const rect = containerRef.current.getBoundingClientRect();
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      // Calculate mouse position relative to center
+      const x = (e.clientX - rect.left - centerX) / centerX;
+      const y = (e.clientY - rect.top - centerY) / centerY;
+      
+      setMousePosition({ x, y });
+    };
+    
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('mousemove', handleMouseMove);
+    }
+    
+    return () => {
+      if (container) {
+        container.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
+  }, []);
+
+  return (
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <div ref={containerRef} className="container max-w-6xl px-4 md:px-6 py-12 md:py-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6 text-center lg:text-left">
+            <motion.span 
+              className="inline-block text-sm text-primary font-mono px-3 py-1 border border-primary/30 rounded-full"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              Full-Stack Developer
+            </motion.span>
+            
+            <motion.h1
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <span className="block">Hi, I'm <span className="text-gradient">John Doe</span> </span>
+              <AnimatedText 
+                text="I build Web Experiences" 
+                type="typing"
+                className="mt-2 block"
+              />
+            </motion.h1>
+            
+            <motion.p
+              className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto lg:mx-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Crafting digital experiences with modern technology and creative solutions.
+            </motion.p>
+            
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Button asChild size="lg">
+                <a href="#projects">View My Projects</a>
+              </Button>
+              
+              <Button asChild variant="outline" size="lg">
+                <a href="#contact">Get In Touch</a>
+              </Button>
+            </motion.div>
+          </div>
+          
+          <motion.div
+            className="h-80 lg:h-[450px] relative"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            style={{
+              transform: `perspective(1000px) rotateX(${mousePosition.y * 5}deg) rotateY(${-mousePosition.x * 5}deg)`
+            }}
+          >
+            <ThreeScene />
+          </motion.div>
+        </div>
+        
+        <motion.div
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            delay: 1,
+            duration: 0.5, 
+            repeat: Infinity, 
+            repeatType: "reverse" 
+          }}
+        >
+          <a href="#about" className="flex flex-col items-center text-sm text-muted-foreground">
+            <span className="mb-2">Scroll Down</span>
+            <ArrowDown size={20} className="animate-bounce" />
+          </a>
+        </motion.div>
+      </div>
+      
+      {/* Additional background elements */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/10 rounded-full filter blur-3xl" />
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
