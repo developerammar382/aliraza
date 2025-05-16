@@ -3,8 +3,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import CardSkill from '../components/CardSkill';
 import { useInView } from 'react-intersection-observer';
-import { Code, Database, Globe, Server, FileCode, Cpu } from 'lucide-react';
+import { Code, Database, Globe, Server, FileCode, Cpu, MessageSquare, Users, Wrench, Briefcase, Sparkles } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Badge } from '@/components/ui/badge';
 
 const SkillsSection: React.FC = () => {
   const { ref, inView } = useInView({
@@ -21,6 +22,14 @@ const SkillsSection: React.FC = () => {
     { icon: <FileCode />, title: 'React/Next.js', level: 85 },
     { icon: <Database />, title: 'Laravel/Statamic', level: 70 },
     { icon: <Cpu />, title: 'UI/UX Implementation', level: 80 }
+  ];
+  
+  const professionalSkills = [
+    { icon: <MessageSquare />, title: 'Communication', description: 'Clear and effective communication with clients and team members' },
+    { icon: <Users />, title: 'Teamwork', description: 'Collaborative approach to projects and problem-solving' },
+    { icon: <Wrench />, title: 'Problem Solving', description: 'Analytical thinking and creative solutions to technical challenges' },
+    { icon: <Briefcase />, title: 'Project Management', description: 'Organizing workflows and ensuring timely delivery' },
+    { icon: <Sparkles />, title: 'Creativity', description: 'Innovative approaches to design and implementation challenges' }
   ];
   
   const containerVariants = {
@@ -66,6 +75,16 @@ const SkillsSection: React.FC = () => {
           </motion.p>
         </div>
         
+        <motion.h3
+          className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Technical Skills
+        </motion.h3>
+        
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -83,6 +102,47 @@ const SkillsSection: React.FC = () => {
           ))}
         </motion.div>
         
+        <motion.h3
+          className="text-xl md:text-2xl font-bold mt-16 mb-6 md:mb-8 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Professional Skills
+        </motion.h3>
+        
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+        >
+          {professionalSkills.map((skill, index) => (
+            <motion.div
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { 
+                  opacity: 1, 
+                  y: 0,
+                  transition: { duration: 0.5, delay: index * 0.1 }
+                }
+              }}
+              className="glass-morphism rounded-xl p-5 sm:p-6"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center text-primary">
+                  {skill.icon}
+                </div>
+                <h4 className="text-lg font-medium">{skill.title}</h4>
+              </div>
+              <p className="text-sm text-muted-foreground">{skill.description}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+        
         <motion.div
           className="mt-16 md:mt-20"
           initial={{ opacity: 0, y: 20 }}
@@ -92,7 +152,7 @@ const SkillsSection: React.FC = () => {
         >
           <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-center">Tools & Technologies</h3>
           
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Bootstrap', 'Laravel', 'VS Code', 'Git'].map((tech, index) => (
               <motion.div
                 key={index}

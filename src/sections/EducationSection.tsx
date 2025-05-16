@@ -26,6 +26,11 @@ const EducationSection: React.FC = () => {
     }
   ];
   
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+  
   return (
     <section id="education" className="py-16 md:py-24 lg:py-32 relative">
       <div className="container max-w-6xl px-4 md:px-6">
@@ -59,18 +64,26 @@ const EducationSection: React.FC = () => {
           </motion.p>
         </div>
         
-        <div 
+        <motion.div 
           ref={ref}
           className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
         >
           {education.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              variants={cardVariants}
             >
-              <Card className="h-full glass-morphism border-0 overflow-hidden">
+              <Card className="h-full glass-morphism border-0 overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="flex flex-row items-center gap-4 pb-2">
                   <div className="w-12 h-12 rounded-full glass-morphism flex items-center justify-center text-primary shrink-0">
                     <School size={20} />
@@ -90,7 +103,7 @@ const EducationSection: React.FC = () => {
               </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
       
       {/* Background elements */}
