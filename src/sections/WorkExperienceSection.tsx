@@ -100,7 +100,7 @@ const WorkExperienceSection: React.FC = () => {
       </div>
       
       {/* Background elements */}
-      <div className="absolute bottom-1/3 left-0 w-80 h-80 bg-primary/5 rounded-full filter blur-3xl z-0" />
+      <div className="absolute bottom-1/3 left-0 w-full sm:w-80 h-80 bg-primary/5 rounded-full filter blur-3xl z-0" />
     </section>
   );
 };

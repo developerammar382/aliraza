@@ -42,7 +42,7 @@ const HeroSection: React.FC = () => {
   }, [isMobile]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20 sm:pb-0">
       <div ref={containerRef} className="container max-w-7xl px-4 md:px-6 py-12 md:py-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-4 md:space-y-6 text-center lg:text-left order-2 lg:order-1">
@@ -108,7 +108,7 @@ const HeroSection: React.FC = () => {
         </div>
         
         <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="absolute -bottom-8 sm:bottom-10 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ 
