@@ -83,7 +83,7 @@ const AboutSection: React.FC = () => {
             />
             
             <AnimatedText 
-              text="I'm a passionate frontend web developer with a strong foundation in both front-end technologies and backend frameworks. My journey in web development began over 5 years ago, and I've been crafting engaging digital experiences ever since."
+              text="I'm a passionate frontend web developer with a strong foundation in both front-end technologies and backend frameworks. My journey in web development began over 2 years ago, and I've been crafting engaging digital experiences ever since."
               className="text-muted-foreground text-sm sm:text-base"
             />
             
