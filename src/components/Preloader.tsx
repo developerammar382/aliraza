@@ -1,7 +1,6 @@
-
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import myImage from './../../public/my-img.jpeg';
 interface PreloaderProps {
   onComplete: () => void;
 }
@@ -38,27 +37,29 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
         >
           <motion.div
             initial={{ scale: 0 }}
-            animate={{ scale: 1, rotate: 360 }}
+            animate={{ scale: 1 }}
             transition={{ type: "spring", duration: 1.5 }}
             className="relative w-20 h-20 mb-8"
           >
+            {/* Outer Circle */}
             <div className="absolute inset-0 rounded-full border-4 border-secondary" />
+
+            {/* Progress Circle */}
             <motion.div 
               className="absolute inset-0 rounded-full border-4 border-primary"
               style={{ 
                 clipPath: `polygon(0 0, ${progress}% 0, ${progress}% 100%, 0 100%)` 
               }}
             />
-            <motion.div 
-              className="absolute top-0 right-0 w-4 h-4 bg-primary rounded-full"
-              animate={{ 
-                rotate: progress * 3.6 // 0-100 to 0-360 degrees
-              }}
-              style={{ 
-                originX: 0.5, 
-                originY: 2.5 // Makes the rotation point the center of the circle
-              }}
-            />
+
+            {/* Center Image */}
+            <div className="absolute inset-2 rounded-full overflow-hidden flex items-center justify-center bg-white">
+              <img
+                src={myImage} 
+                alt="Loader Icon"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </motion.div>
           
           <motion.div
@@ -67,7 +68,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             transition={{ delay: 0.5 }}
             className="text-center"
           >
-            <h1 className="text-2xl font-bold mb-2 text-gradient">Developer Portfolio</h1>
+            <h1 className="text-2xl font-bold mb-2 text-gradient">Ali Raza Portfolio</h1>
             <p className="text-sm text-muted-foreground">Loading... {progress}%</p>
           </motion.div>
         </motion.div>

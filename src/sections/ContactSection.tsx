@@ -55,7 +55,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-muted-foreground">Email</p>
-                  <p className="text-sm sm:text-base font-medium">developer.ammar382@gmail.com</p>
+                  <p className="text-sm sm:text-base font-medium">aliraza@gmail.com</p>
                 </div>
               </div>
               
@@ -65,7 +65,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-muted-foreground">Phone</p>
-                  <p className="text-sm sm:text-base font-medium">+92 3167578569</p>
+                  <p className="text-sm sm:text-base font-medium">+92 347 6475440</p>
                 </div>
               </div>
               
@@ -92,7 +92,7 @@ const ContactSection: React.FC = () => {
                   <Github size={16} />
                 </motion.a>
                 <motion.a
-                  href="www.linkedin.com/in/ammar-shahid-7313a9260" 
+                  href="https://www.linkedin.com/in/muhammad-ali-raza-002067272" 
                   className="w-9 h-9 sm:w-10 sm:h-10 rounded-full glass-morphism flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}

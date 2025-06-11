@@ -52,7 +52,7 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Frontend Web Developer
+              Full Stack Web Developer
             </motion.span>
             
             <motion.h1
@@ -61,7 +61,7 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <span className="block">Hi, I'm <span className="text-gradient">Ammar Shahid</span> </span>
+              <span className="block">Hi, I'm <span className="text-gradient">Ali Raza</span> </span>
               <AnimatedText 
                 text="I build Web Experiences" 
                 type="heading"
@@ -75,7 +75,7 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Crafting digital experiences with HTML, CSS, JavaScript, React, Next.js and Laravel.
+              Crafting digital experiences with HTML, CSS, Jquery JavaScript, React, Next.js and Laravel.
             </motion.p>
             
             <motion.div

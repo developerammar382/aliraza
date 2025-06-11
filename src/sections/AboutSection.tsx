@@ -48,7 +48,7 @@ const AboutSection: React.FC = () => {
               <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-lg glass-morphism overflow-hidden mx-auto">
                 <img 
                   src="/my-img.jpeg"
-                  alt="Ammar Shahid" 
+                  alt="Ali Raza" 
                   className="w-full h-full object-cover"
                 />
               </div>

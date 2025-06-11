@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <a href="#" className="text-xl sm:text-2xl font-bold text-gradient">
-            AMMAR<span className="text-primary">.</span>
+            ALI RAZA<span className="text-primary">.</span>
           </a>
           
           <div className="hidden md:flex items-center space-x-4 lg:space-x-8">

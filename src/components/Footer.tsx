@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              AMMAR<span className="text-primary">.</span>
+              ALI RAZA<span className="text-primary">.</span>
             </motion.h3>
             <motion.p 
               className="text-xs md:text-sm text-muted-foreground"
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
               <Github size={18} />
             </a>
-            <a href="www.linkedin.com/in/ammar-shahid-7313a9260" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/in/muhammad-ali-raza-002067272" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin size={18} />
             </a>
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p>&copy; {new Date().getFullYear()} Ammar Shahid. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Ali Raza. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>
