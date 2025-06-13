@@ -68,7 +68,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             transition={{ delay: 0.5 }}
             className="text-center"
           >
-            <h1 className="text-2xl font-bold mb-2 text-gradient">Ali Raza Portfolio</h1>
+            <h1 className="text-2xl font-bold mb-2 text-gradient">Muhammad Ali Raza</h1>
             <p className="text-sm text-muted-foreground">Loading... {progress}%</p>
           </motion.div>
         </motion.div>

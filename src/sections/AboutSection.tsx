@@ -10,7 +10,7 @@ const AboutSection: React.FC = () => {
     threshold: 0.1
   });
   
-  const skills = ['HTML', 'CSS', 'Bootstrap', 'Tailwind CSS', 'JavaScript', 'React', 'Next.js', 'Statamic', 'Laravel'];
+  const skills = ['HTML', 'CSS', 'Bootstrap', 'Tailwind CSS', 'JavaScript', 'React', 'PHP', 'Laravel'];
   
   return (
     <section id="about" className="py-16 md:py-24 lg:py-32 relative">
@@ -77,18 +77,18 @@ const AboutSection: React.FC = () => {
           
           <div ref={ref} className="space-y-4 md:space-y-6">
             <AnimatedText 
-              text="Frontend Web Developer Since 2023"
+              text="Full Stack Web Developer Since 2022"
               className="text-xl sm:text-2xl md:text-3xl font-bold mb-4"
               type="heading"
             />
             
             <AnimatedText 
-              text="I'm a passionate frontend web developer with a strong foundation in both front-end technologies and backend frameworks. My journey in web development began over 2 years ago, and I've been crafting engaging digital experiences ever since."
+              text="I'm a passionate web developer with a strong foundation in both front-end technologies and backend frameworks. My journey in web development began over 2 years ago, and I've been crafting engaging digital experiences ever since."
               className="text-muted-foreground text-sm sm:text-base"
             />
             
             <AnimatedText 
-              text="I specialize in building responsive, accessible, and performant web applications using modern frameworks like React, Next.js, and tools like Tailwind CSS. My approach combines technical expertise with creative problem-solving to deliver solutions that not only meet but exceed client expectations."
+              text="I specialize in building responsive, accessible, and high-performance web applications using modern frameworks like React and Next.js, along with tools such as Tailwind CSS. On the backend, I work with technologies like PHP and Laravel. My approach blends technical expertise with creative problem-solving to deliver solutions that consistently exceed client expectations."
               className="text-muted-foreground text-sm sm:text-base"
             />
             

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUp, Github, Linkedin, Twitter } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Mail, Phone, Twitter } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              ALI RAZA<span className="text-primary">.</span>
+            MUHAMMAD  ALI RAZA<span className="text-primary">.</span>
             </motion.h3>
             <motion.p 
               className="text-xs md:text-sm text-muted-foreground"
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Creating digital experiences that matter.
+              An Experienced Full Stack Web Developer.
             </motion.p>
           </div>
           
@@ -43,14 +43,14 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Github size={18} />
+            <a href="https://wa.me/+923476475440" className="text-muted-foreground hover:text-primary transition-colors">
+            <Phone size={18} />
             </a>
             <a href="https://www.linkedin.com/in/muhammad-ali-raza-002067272" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin size={18} />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Twitter size={18} />
+            <a href="mailto:engineer.ali192@outlook.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <Mail size={18} />
             </a>
           </motion.div>
           
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p>&copy; {new Date().getFullYear()} Ali Raza. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Muhammad Ali Raza. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>

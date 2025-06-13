@@ -34,7 +34,7 @@ const ContactSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Have a project in mind or want to chat? Feel free to reach out and I'll get back to you as soon as possible.
+            If you have any query or want to chat? Feel free to reach out and I'll get back to you as soon as possible.
           </motion.p>
         </div>
         
@@ -55,7 +55,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-muted-foreground">Email</p>
-                  <p className="text-sm sm:text-base font-medium">aliraza@gmail.com</p>
+                  <p className="text-sm sm:text-base font-medium">engineer.ali192@outlook.com</p>
                 </div>
               </div>
               
@@ -65,7 +65,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-muted-foreground">Phone</p>
-                  <p className="text-sm sm:text-base font-medium">+92 347 6475440</p>
+                  <p className="text-sm sm:text-base font-medium">+44 7762 862169</p>
                 </div>
               </div>
               
@@ -75,7 +75,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-muted-foreground">Location</p>
-                  <p className="text-sm sm:text-base font-medium">Pakistan</p>
+                  <p className="text-sm sm:text-base font-medium">48 New Road Chingford Mount London</p>
                 </div>
               </div>
             </div>
@@ -84,12 +84,12 @@ const ContactSection: React.FC = () => {
               <h4 className="text-base md:text-lg font-medium mb-4">Connect With Me</h4>
               <div className="flex space-x-4">
                 <motion.a
-                  href="#" 
+                  href="https://wa.me/+923476475440" 
                   className="w-9 h-9 sm:w-10 sm:h-10 rounded-full glass-morphism flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <Github size={16} />
+                  <Phone size={16} />
                 </motion.a>
                 <motion.a
                   href="https://www.linkedin.com/in/muhammad-ali-raza-002067272" 
@@ -100,12 +100,12 @@ const ContactSection: React.FC = () => {
                   <Linkedin size={16} />
                 </motion.a>
                 <motion.a
-                  href="#" 
+                  href="mailto:engineer.ali192@outlook.com" 
                   className="w-9 h-9 sm:w-10 sm:h-10 rounded-full glass-morphism flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <Twitter size={16} />
+                  <Mail size={16} />
                 </motion.a>
               </div>
             </div>

@@ -13,24 +13,28 @@ const WorkExperienceSection: React.FC = () => {
   
   const experiences = [
     {
-      position: "Senior Frontend Developer",
-      company: "Blue Horn Technologies",
-      year: "2023 - Present",
-      description: "Lead frontend development for enterprise clients using React, Next.js and modern JavaScript frameworks. Implemented responsive designs and optimized application performance."
+      position: "Senior Full Stack Developer",
+      company: "Wivro",
+      year: "Feb 2024 - March 2025",
+      description:
+        "Led full-stack development for enterprise-level applications, focusing on frontend architecture with React, Next.js, and Tailwind CSS. Collaborated closely with backend teams using PHP and Laravel to deliver scalable, performant, and accessible web solutions. Played a key role in optimizing application performance and enhancing user experience across platforms."
     },
     {
-      position: "Web Developer",
-      company: "Adrightly",
-      year: "2022 - 2023",
-      description: "Developed and maintained client websites using HTML, CSS, JavaScript, and various content management systems. Collaborated with design team to implement responsive UI/UX designs."
+      position: "Full Stack Web Developer",
+      company: "Abode Pvt. Ltd",
+      year: "Aug 2023 - Jan 2024",
+      description:
+        "Developed and maintained dynamic websites and web applications using JavaScript, PHP, and CMS platforms. Integrated responsive UI/UX designs in collaboration with designers, ensuring cross-browser compatibility and mobile responsiveness. Contributed to both frontend and backend improvements using Laravel and modern frontend tools."
     },
     {
-      position: "Frontend Intern",
-      company: "Multex. Pk",
-      year: "2022",
-      description: "Assisted in developing and debugging frontend components. Gained hands-on experience with modern web development practices and tools."
+      position: "Web App & Web Development",
+      company: "Orbit Solutions",
+      year: "Sep 2022 - Aug 2023",
+      description:
+        "Assisted in developing, testing, and debugging web application components. Gained hands-on experience with modern frontend frameworks and tools, including React and Tailwind CSS. Supported senior developers in implementing best practices for responsive and accessible design."
     }
   ];
+  
   
   return (
     <section id="experience" className="py-16 md:py-24 lg:py-32 relative bg-secondary/20">

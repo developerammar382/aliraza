@@ -63,7 +63,7 @@ const HeroSection: React.FC = () => {
             >
               <span className="block">Hi, I'm <span className="text-gradient">Ali Raza</span> </span>
               <AnimatedText 
-                text="I build Web Experiences" 
+                text="I build Web Applications" 
                 type="heading"
                 className="mt-2 block text-3xl sm:text-4xl lg:text-5xl"
               />
@@ -75,7 +75,7 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Crafting digital experiences with HTML, CSS, Jquery JavaScript, React, Next.js and Laravel.
+              I have experiences with HTML, CSS, Tailwind CSS, JavaScript, Jquery, React, and Laravel.
             </motion.p>
             
             <motion.div
@@ -85,7 +85,7 @@ const HeroSection: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <Button asChild size="lg" className="w-full sm:w-auto">
-                <a href="#projects">View My Projects</a>
+                <a href="#experience">My Experience</a>
               </Button>
               
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
