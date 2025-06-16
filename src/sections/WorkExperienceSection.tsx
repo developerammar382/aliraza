@@ -17,7 +17,7 @@ const WorkExperienceSection: React.FC = () => {
       company: "Wivro",
       year: "Feb 2024 - March 2025",
       description:
-        "Led full-stack development for enterprise-level applications, focusing on frontend architecture with React, Next.js, and Tailwind CSS. Collaborated closely with backend teams using PHP and Laravel to deliver scalable, performant, and accessible web solutions. Played a key role in optimizing application performance and enhancing user experience across platforms."
+        "Led full-stack development for enterprise-level applications, focusing on frontend architecture with React, and Tailwind CSS. Collaborated closely with backend teams using PHP and Laravel to deliver scalable, performant, and accessible web solutions. Played a key role in optimizing application performance and enhancing user experience across platforms."
     },
     {
       position: "Full Stack Web Developer",

@@ -88,7 +88,7 @@ const AboutSection: React.FC = () => {
             />
             
             <AnimatedText 
-              text="I specialize in building responsive, accessible, and high-performance web applications using modern frameworks like React and Next.js, along with tools such as Tailwind CSS. On the backend, I work with technologies like PHP and Laravel. My approach blends technical expertise with creative problem-solving to deliver solutions that consistently exceed client expectations."
+              text="I specialize in building responsive, accessible, and high-performance web applications using modern frameworks like React, along with tools such as Tailwind CSS. On the backend, I work with technologies like PHP and Laravel. My approach blends technical expertise with creative problem-solving to deliver solutions that consistently exceed client expectations."
               className="text-muted-foreground text-sm sm:text-base"
             />
             
